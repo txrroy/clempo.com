@@ -3,20 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clempo: daily news for kids</title>
+  <title>Clempo: daily world news for families</title>
   <meta
     name="description"
-    content="Clempo shows the top 20 news stories of the day, written for kids aged 8 to 14. Reading all of them takes about 5 minutes."
+    content="Clempo is a short list of each day's most important world news, written for kids aged 8 to 14 and the adults they read with. No ads, no trackers, no cookies."
   />
-  <meta property="og:title" content="Clempo: daily news for kids" />
-  <meta property="og:description" content="The top 20 news stories of the day, written for kids aged 8 to 14." />
+  <meta property="og:title" content="Clempo: daily world news for families" />
+  <meta property="og:description" content="A short list of each day's most important world news, written for kids aged 8 to 14. No ads, no trackers, no cookies." />
   <link rel="icon" type="image/svg+xml" href="clempo-logo.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="preload" href="fonts/plus-jakarta-sans-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -32,12 +27,12 @@
 
       <nav class="nav-center" aria-label="Primary">
         <a href="#how">How it works</a>
-        <a href="#why">Why I built it</a>
+        <a href="#privacy">Privacy</a>
         <a href="#apps">Apps</a>
       </nav>
 
       <div class="nav-right">
-        <a href="https://news.snappylit.com/" class="btn btn-header" rel="noopener">Open web app</a>
+        <a href="https://clempo.news" class="btn btn-header">Read the news</a>
       </div>
     </header>
 
@@ -45,22 +40,22 @@
       <section class="hero" aria-labelledby="hero-title">
         <h1 id="hero-title" class="hero-headline">The world in 5 minutes.</h1>
         <p class="hero-sub">
-          The top 20 news stories of the day, written for kids aged 8 to 14. Reading all of them takes about 5 minutes.
+          Each day, Clempo picks the most important world news and explains it in plain language for kids aged 8 to 14. Families can read it together, then put the phone down.
         </p>
-        <a href="https://news.snappylit.com/" class="btn btn-hero" rel="noopener">Read today's news</a>
-        <p class="hero-note">Free. Works in any phone browser.</p>
+        <a href="https://clempo.news" class="btn btn-hero">Read today's news</a>
+        <p class="hero-note">No ads, no trackers, no cookies.</p>
 
         <div class="card-wrap">
           <div class="reader-card" id="reader-card" role="button" tabindex="0"
-               aria-label="Sample story. Tap to see why it matters.">
+               aria-label="Sample story. Select to see why it matters.">
             <figure class="reader-face reader-front">
               <div class="reader-top">
-                <span class="reader-topic">Science</span>
-                <span class="reader-count">4 of 20</span>
+                <span class="reader-topic">World</span>
+                <span class="reader-count">Sample story</span>
               </div>
-              <p class="reader-headline">Why do octopuses have three hearts?</p>
+              <p class="reader-headline">A global agreement to protect the open ocean takes effect</p>
               <p class="reader-body">
-                Two hearts pump blood to the gills. The third sends it to the rest of the body. When an octopus swims, the third heart stops for a moment.
+                The High Seas Treaty took effect on January 17, 2026. It covers ocean waters that are outside the control of any single country. These waters make up about half of Earth's surface.
               </p>
               <p class="reader-foot">Tap the card to see why it matters</p>
             </figure>
@@ -68,11 +63,11 @@
             <figure class="reader-face reader-back">
               <div class="reader-top">
                 <span class="reader-topic">Why it matters</span>
-                <span class="reader-count">4 of 20</span>
+                <span class="reader-count">Sample story</span>
               </div>
-              <p class="reader-headline">It shows how animals adapt to the ocean.</p>
+              <p class="reader-headline">The open ocean now has shared rules.</p>
               <p class="reader-body">
-                Octopus blood carries oxygen with copper instead of iron. Copper works better in cold water with little oxygen. That is why octopuses can live in the deep sea.
+                Before this treaty, countries had no common way to protect sea life far from shore. Now they can create protected areas there and check the effects of new activities on the ocean before they begin.
               </p>
               <p class="reader-foot">Tap again to go back</p>
             </figure>
@@ -81,37 +76,47 @@
       </section>
 
       <aside class="hero-notes" aria-label="Availability">
-        <p><strong>Available now</strong><br />On mobile web, at no cost.</p>
-        <p><strong>Coming later</strong><br />Apps for iPhone and Android.</p>
+        <p><strong>Available now</strong><br />On the web at clempo.news</p>
+        <p><strong>Coming later</strong><br />Apps for iPhone and Android</p>
       </aside>
     </div>
     </div>
 
     <main>
-
       <section id="how" class="section">
         <h2 class="section-heading">How it works</h2>
         <ol class="steps">
-          <li>Clempo collects news from many sources each day and removes duplicates.</li>
-          <li>It ranks the stories by how much they affect the world, and keeps the top 20.</li>
+          <li>Clempo collects news from many sources each day and removes repeated stories.</li>
+          <li>It keeps the stories that matter most to the world that day. The number changes from day to day.</li>
           <li>It rewrites each story in neutral language that is suitable for kids.</li>
           <li>An editor reads and approves every story before it is published.</li>
         </ol>
-        <a href="https://news.snappylit.com/" class="btn btn-hero" rel="noopener">Open the web app</a>
+        <p class="section-copy">
+          The list ends when the day's stories end. There is no feed to scroll and nothing to keep you on the page.
+        </p>
       </section>
 
       <section class="section section-split">
-        <div id="why">
-          <h2 class="section-heading">Why I built it</h2>
+        <div id="privacy">
+          <h2 class="section-heading">Privacy</h2>
+          <ul class="facts">
+            <li>No ads</li>
+            <li>No trackers or analytics</li>
+            <li>No cookies</li>
+            <li>No sign-up, and no personal details asked for</li>
+          </ul>
           <p class="section-copy">
-            When I was a child in India in the 1980s, my dad had me watch a 5-minute English news bulletin on TV every day. Today, my kids get most of their news from social media. I built Clempo to give them a short daily update they can finish.
+            Clempo does not collect information about the people who read it.
           </p>
         </div>
 
         <div id="apps">
           <h2 class="section-heading">Apps</h2>
           <p class="section-copy">
-            Apps for iPhone and Android are in progress. Until they are ready, Clempo works in the browser on any phone. There is nothing to install.
+            Apps for iPhone and Android are in progress. Until then, Clempo works in the browser on any phone, tablet, or computer, with nothing to install.
+          </p>
+          <p class="section-actions">
+            <a href="https://clempo.news" class="btn btn-hero">Open clempo.news</a>
           </p>
         </div>
       </section>

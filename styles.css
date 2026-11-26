@@ -1,3 +1,43 @@
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/plus-jakarta-sans-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/plus-jakarta-sans-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/plus-jakarta-sans-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/plus-jakarta-sans-latin-700-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("fonts/plus-jakarta-sans-latin-800-normal.woff2") format("woff2");
+}
+
 :root {
   --white: #ffffff;
   --cream: #f7f0dc;
@@ -345,6 +385,21 @@ a {
   color: var(--orange);
 }
 
+.facts {
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--deep);
+}
+
+.section-actions {
+  margin: 1.75rem 0 0;
+}
+
 .section-split {
   max-width: 1000px;
   display: grid;
@@ -415,7 +470,22 @@ a {
     gap: 1.25rem;
   }
 
-  .section-split {
+  .facts {
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--deep);
+}
+
+.section-actions {
+  margin: 1.75rem 0 0;
+}
+
+.section-split {
     grid-template-columns: 1fr;
   }
 }
