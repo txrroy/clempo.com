@@ -355,11 +355,25 @@ a {
   padding: clamp(4rem, 10vh, 6.5rem) 1.25rem 0;
 }
 
+.label {
+  margin: 0 0 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a969b;
+}
+
+.label span {
+  margin-right: 0.75rem;
+}
+
 .section-heading {
-  margin: 0 0 1rem;
-  font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.1rem);
+  margin: 0 0 1.1rem;
+  max-width: 14em;
+  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.05rem);
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.18;
   letter-spacing: -0.025em;
   color: var(--deep);
 }
@@ -372,7 +386,7 @@ a {
 }
 
 .steps {
-  margin: 0 0 2rem;
+  margin: 0;
   padding-left: 1.4rem;
   display: grid;
   gap: 0.75rem;
@@ -385,23 +399,13 @@ a {
   color: var(--orange);
 }
 
-.facts {
-  margin: 0 0 1.25rem;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.5rem;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--deep);
-}
-
 .section-actions {
   margin: 1.75rem 0 0;
 }
 
 .section-split {
-  max-width: 1000px;
+  max-width: 1040px;
+  align-items: start;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(2rem, 5vw, 4.5rem);
@@ -409,7 +413,7 @@ a {
 
 /* Footer */
 .site-footer {
-  max-width: 1000px;
+  max-width: 1040px;
   margin: 0 auto;
   padding: clamp(4rem, 10vh, 6rem) 1.25rem 3rem;
   display: flex;
@@ -470,18 +474,7 @@ a {
     gap: 1.25rem;
   }
 
-  .facts {
-  margin: 0 0 1.25rem;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.5rem;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--deep);
-}
-
-.section-actions {
+  .section-actions {
   margin: 1.75rem 0 0;
 }
 
