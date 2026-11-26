@@ -47,38 +47,67 @@
         <p class="hero-note">No ads, no trackers, no cookies.</p>
 
         <div class="card-wrap">
-          <div class="reader-card" id="reader-card" role="button" tabindex="0"
-               aria-label="Sample story. Select to see why it matters.">
-            <figure class="reader-face reader-front">
-              <div class="reader-top">
-                <span class="reader-topic">World</span>
-                <span class="reader-count">Sample story</span>
-              </div>
-              <p class="reader-headline">A global agreement to protect the open ocean takes effect</p>
-              <p class="reader-body">
-                The High Seas Treaty took effect on January 17, 2026. It covers ocean waters that are outside the control of any single country. These waters make up about half of Earth's surface.
-              </p>
-              <p class="reader-foot">Tap the card to see why it matters</p>
-            </figure>
+          <span class="watermark" aria-hidden="true">clempo</span>
+          <div class="card-tilt">
+            <div class="reader-card" id="reader-card" role="button" tabindex="0"
+                 aria-label="Sample story. Select to see why it matters.">
+              <figure class="reader-face reader-front">
+                <div class="reader-top">
+                  <span class="reader-kicker">World news</span>
+                  <span class="reader-count">Sample story</span>
+                </div>
+                <p class="reader-headline">A global agreement to protect the open ocean takes effect</p>
+                <p class="reader-body">
+                  The High Seas Treaty took effect on January 17, 2026. It covers ocean waters that are outside the control of any single country. These waters make up about half of Earth's surface.
+                </p>
+                <div class="reader-meta">
+                  <span>World &middot; Ages 8 to 14</span>
+                  <span class="reader-flip">Tap to flip</span>
+                </div>
+              </figure>
 
-            <figure class="reader-face reader-back">
-              <div class="reader-top">
-                <span class="reader-topic">Why it matters</span>
-                <span class="reader-count">Sample story</span>
-              </div>
-              <p class="reader-headline">The open ocean now has shared rules.</p>
-              <p class="reader-body">
-                Before this treaty, countries had no common way to protect sea life far from shore. Now they can create protected areas there and check the effects of new activities on the ocean before they begin.
-              </p>
-              <p class="reader-foot">Tap again to go back</p>
-            </figure>
+              <figure class="reader-face reader-back">
+                <div class="reader-top">
+                  <span class="reader-kicker">Why it matters</span>
+                  <span class="reader-count">Sample story</span>
+                </div>
+                <p class="reader-headline">The open ocean now has shared rules.</p>
+                <p class="reader-body">
+                  Before this treaty, countries had no common way to protect sea life far from shore. Now they can create protected areas there and check the effects of new activities on the ocean before they begin.
+                </p>
+                <div class="reader-meta">
+                  <span>World &middot; Ages 8 to 14</span>
+                  <span class="reader-flip">Tap to flip back</span>
+                </div>
+              </figure>
+            </div>
           </div>
         </div>
       </section>
 
+      <aside class="hero-left" aria-hidden="true">
+        <svg class="circle-stamp" viewBox="0 0 200 200">
+          <defs>
+            <path id="stampPath" d="M 100,100 m -74,0 a 74,74 0 1,1 148,0 a 74,74 0 1,1 -148,0" />
+          </defs>
+          <text><textPath href="#stampPath" textLength="460" lengthAdjust="spacing">THE WORLD IN 5 MINUTES &#8226; NEWS FOR FAMILIES &#8226;</textPath></text>
+        </svg>
+        <a href="#how" class="scroll-cue" tabindex="-1">
+          <span class="scroll-text">Scroll down</span>
+          <span class="scroll-arrow">&darr;</span>
+        </a>
+      </aside>
+
       <aside class="hero-notes" aria-label="Availability">
-        <p><strong>Available now</strong><br />On the web at clempo.news</p>
-        <p><strong>Coming later</strong><br />Apps for iPhone and Android</p>
+        <div class="notes-rule" aria-hidden="true"></div>
+        <article class="note">
+          <p class="note-meta">Live now &middot; Web</p>
+          <h2 class="note-title">Clempo delivers the day's most important world news, written for kids.</h2>
+        </article>
+        <article class="note">
+          <p class="note-meta">Coming soon &middot; iOS &amp; Android</p>
+          <h2 class="note-title">Native apps for iPhone and Android are on the way.</h2>
+        </article>
       </aside>
     </div>
     </div>

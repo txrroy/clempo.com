@@ -47,6 +47,8 @@
   --orange: #c97a1a;    /* logo orange, darkened for small text */
   --ink: #0b2e36;
   --muted: #4a5a60;
+  --subtle: #8a969b;
+  --orange-bright: #e39223;
   --radius: 4px;
   --font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --band-width: clamp(300px, 34vw, 460px);
@@ -88,7 +90,7 @@ a {
 
 .top {
   position: relative;
-  padding-bottom: 3.5rem;
+  padding-bottom: 4rem;
 }
 
 /* Cream column behind the hero */
@@ -98,7 +100,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
   width: var(--band-width);
-  height: 100%;
+  bottom: 9rem;
   background: var(--cream);
   z-index: 0;
   pointer-events: none;
@@ -227,10 +229,33 @@ a {
   color: var(--muted);
 }
 
-/* Flip card */
+/* Card, tilted, over a faint wordmark */
 .card-wrap {
-  width: min(340px, 100%);
-  margin: 3rem auto 0;
+  position: relative;
+  width: min(330px, 86vw);
+  margin: 3.25rem auto 0;
+}
+
+.watermark {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(120px, 17vw, 250px);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  color: rgba(11, 46, 54, 0.045);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.card-tilt {
+  position: relative;
+  z-index: 1;
+  transform: rotate(-3deg);
   perspective: 1200px;
 }
 
@@ -253,10 +278,12 @@ a {
 .reader-face {
   grid-area: 1 / 1;
   margin: 0;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 1.25rem;
   background: var(--white);
   border-radius: var(--radius);
-  box-shadow: 0 1px 2px rgba(11, 46, 54, 0.08), 0 10px 24px -8px rgba(11, 46, 54, 0.22);
+  box-shadow:
+    0 2px 6px rgba(11, 46, 54, 0.06),
+    0 24px 50px -12px rgba(11, 46, 54, 0.28);
   text-align: left;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -273,78 +300,153 @@ a {
 .reader-top {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.75rem;
-  font-size: 0.85rem;
-  font-weight: 600;
+  align-items: baseline;
+  margin-bottom: 0.85rem;
 }
 
-.reader-topic {
-  color: var(--orange);
+.reader-kicker {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange-bright);
 }
 
 .reader-count {
-  color: var(--muted);
-}
-
-.reader-back .reader-topic {
-  color: #f0b766;
-}
-
-.reader-back .reader-count {
-  color: #b8d0d5;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--subtle);
 }
 
 .reader-headline {
   margin: 0 0 0.6rem;
   font-size: 1.3rem;
-  font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -0.015em;
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
   color: var(--deep);
 }
 
-.reader-back .reader-headline {
-  color: var(--white);
-}
-
 .reader-body {
-  margin: 0 0 1.25rem;
-  font-size: 0.95rem;
+  margin: 0 0 1.4rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
   color: var(--muted);
 }
 
-.reader-back .reader-body {
-  color: #dbe8eb;
+.reader-meta {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--subtle);
 }
 
-.reader-foot {
-  margin: auto 0 0;
-  font-size: 0.85rem;
-  font-weight: 600;
+.reader-flip {
+  font-weight: 700;
   color: var(--teal);
 }
 
-.reader-back .reader-foot {
-  color: var(--white);
+.reader-back .reader-kicker { color: #f0b766; }
+.reader-back .reader-count,
+.reader-back .reader-meta { color: #a9c6cc; }
+.reader-back .reader-headline { color: var(--white); }
+.reader-back .reader-body { color: #dbe8eb; }
+.reader-back .reader-flip { color: var(--white); }
+
+/* Left margin: rotating stamp with scroll cue */
+.hero-left {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  justify-self: start;
+  position: relative;
+  width: 132px;
+  height: 132px;
+  margin-bottom: 9rem;
 }
 
-/* Notes beside the hero */
+.circle-stamp {
+  width: 132px;
+  height: 132px;
+  overflow: visible;
+  animation: spin 40s linear infinite;
+}
+
+.circle-stamp text {
+  font-family: var(--font);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0;
+  fill: rgba(11, 46, 54, 0.42);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .circle-stamp { animation: none; }
+}
+
+.scroll-cue {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: var(--deep);
+}
+
+.scroll-text {
+  writing-mode: vertical-rl;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.scroll-arrow {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+/* Right margin: notes */
 .hero-notes {
   grid-column: 3;
+  grid-row: 1;
   align-self: center;
   justify-self: start;
-  max-width: 220px;
-  display: grid;
-  gap: 1.75rem;
+  max-width: 245px;
 }
 
-.hero-notes p {
+.notes-rule {
+  width: 26px;
+  height: 2px;
+  background: var(--deep);
+  margin-bottom: 1.6rem;
+}
+
+.note + .note {
+  margin-top: 1.6rem;
+}
+
+.note-meta {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--subtle);
+}
+
+.note-title {
   margin: 0;
-  font-size: 0.95rem;
-  color: var(--muted);
-}
-
-.hero-notes strong {
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
   color: var(--deep);
 }
 
@@ -442,7 +544,17 @@ a {
   color: var(--muted);
 }
 
+.section-actions {
+  margin: 1.75rem 0 0;
+}
+
 /* Responsive */
+@media (max-width: 960px) {
+  .hero-left {
+    display: none;
+  }
+}
+
 @media (max-width: 860px) {
   .site-header {
     grid-template-columns: auto 1fr;
@@ -454,6 +566,7 @@ a {
 
   .cream-column {
     width: min(88vw, 380px);
+    bottom: 0;
   }
 
   .hero-grid {
@@ -466,25 +579,19 @@ a {
 
   .hero-notes {
     grid-column: 1;
+    grid-row: 2;
     justify-self: center;
-    max-width: 340px;
+    max-width: min(88vw, 380px);
     width: 100%;
-    margin-top: 3rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.25rem;
+    margin-top: 3.5rem;
+    padding: 0 1.5rem;
   }
 
-  .section-actions {
-  margin: 1.75rem 0 0;
-}
-
-.section-split {
+  .section-split {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 480px) {
-  .hero-notes {
-    grid-template-columns: 1fr;
+  .card-tilt {
+    transform: rotate(-2deg);
   }
 }
