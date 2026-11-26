@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clempo: daily news for kids</title>
+  <meta
+    name="description"
+    content="Clempo shows the top 20 news stories of the day, written for kids aged 8 to 14. Reading all of them takes about 5 minutes."
+  />
+  <meta property="og:title" content="Clempo: daily news for kids" />
+  <meta property="og:description" content="The top 20 news stories of the day, written for kids aged 8 to 14." />
+  <link rel="icon" type="image/svg+xml" href="clempo-logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <div class="top" id="top">
+    <div class="cream-column" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a href="#top" class="brand" aria-label="Clempo home">
+        <img src="clempo-logo.svg" alt="" class="brand-logo" width="845" height="1000" />
+        <span class="brand-name">Clempo</span>
+      </a>
+
+      <nav class="nav-center" aria-label="Primary">
+        <a href="#how">How it works</a>
+        <a href="#why">Why I built it</a>
+        <a href="#apps">Apps</a>
+      </nav>
+
+      <div class="nav-right">
+        <a href="https://news.snappylit.com/" class="btn btn-header" rel="noopener">Open web app</a>
+      </div>
+    </header>
+
+    <div class="hero-grid">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title" class="hero-headline">The world in 5 minutes.</h1>
+        <p class="hero-sub">
+          The top 20 news stories of the day, written for kids aged 8 to 14. Reading all of them takes about 5 minutes.
+        </p>
+        <a href="https://news.snappylit.com/" class="btn btn-hero" rel="noopener">Read today's news</a>
+        <p class="hero-note">Free. Works in any phone browser.</p>
+
+        <div class="card-wrap">
+          <div class="reader-card" id="reader-card" role="button" tabindex="0"
+               aria-label="Sample story. Tap to see why it matters.">
+            <figure class="reader-face reader-front">
+              <div class="reader-top">
+                <span class="reader-topic">Science</span>
+                <span class="reader-count">4 of 20</span>
+              </div>
+              <p class="reader-headline">Why do octopuses have three hearts?</p>
+              <p class="reader-body">
+                Two hearts pump blood to the gills. The third sends it to the rest of the body. When an octopus swims, the third heart stops for a moment.
+              </p>
+              <p class="reader-foot">Tap the card to see why it matters</p>
+            </figure>
+
+            <figure class="reader-face reader-back">
+              <div class="reader-top">
+                <span class="reader-topic">Why it matters</span>
+                <span class="reader-count">4 of 20</span>
+              </div>
+              <p class="reader-headline">It shows how animals adapt to the ocean.</p>
+              <p class="reader-body">
+                Octopus blood carries oxygen with copper instead of iron. Copper works better in cold water with little oxygen. That is why octopuses can live in the deep sea.
+              </p>
+              <p class="reader-foot">Tap again to go back</p>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <aside class="hero-notes" aria-label="Availability">
+        <p><strong>Available now</strong><br />On mobile web, at no cost.</p>
+        <p><strong>Coming later</strong><br />Apps for iPhone and Android.</p>
+      </aside>
+    </div>
+    </div>
+
+    <main>
+
+      <section id="how" class="section">
+        <h2 class="section-heading">How it works</h2>
+        <ol class="steps">
+          <li>Clempo collects news from many sources each day and removes duplicates.</li>
+          <li>It ranks the stories by how much they affect the world, and keeps the top 20.</li>
+          <li>It rewrites each story in neutral language that is suitable for kids.</li>
+          <li>An editor reads and approves every story before it is published.</li>
+        </ol>
+        <a href="https://news.snappylit.com/" class="btn btn-hero" rel="noopener">Open the web app</a>
+      </section>
+
+      <section class="section section-split">
+        <div id="why">
+          <h2 class="section-heading">Why I built it</h2>
+          <p class="section-copy">
+            When I was a child in India in the 1980s, my dad had me watch a 5-minute English news bulletin on TV every day. Today, my kids get most of their news from social media. I built Clempo to give them a short daily update they can finish.
+          </p>
+        </div>
+
+        <div id="apps">
+          <h2 class="section-heading">Apps</h2>
+          <p class="section-copy">
+            Apps for iPhone and Android are in progress. Until they are ready, Clempo works in the browser on any phone. There is nothing to install.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a href="#top" class="footer-brand" aria-label="Clempo home">
+        <img src="clempo-logo.svg" alt="" width="845" height="1000" />
+        <span>Clempo</span>
+      </a>
+      <p class="footer-note">&copy; 2026 Clempo</p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var card = document.getElementById('reader-card');
+      if (!card) return;
+      function flip() { card.classList.toggle('is-flipped'); }
+      card.addEventListener('click', flip);
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
+      });
+    })();
+  </script>
+</body>
+</html>
