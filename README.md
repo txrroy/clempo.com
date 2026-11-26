@@ -27,3 +27,7 @@ The page loads nothing from other domains and sets no cookies. Keep it that way:
 | Grey | `#4A5A60` | Body text |
 
 All corners use a 4px radius.
+
+## Updating the CSS
+
+After changing `styles.css`, raise the number in `styles.css?v=5` inside `index.html`. This makes browsers and the CDN load the new file.
